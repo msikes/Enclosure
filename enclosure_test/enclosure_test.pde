@@ -11,10 +11,10 @@ void setup() {
   
   print(Arduino.list()); //Finding arduino port
   arduino = new Arduino(this, Arduino.list()[0], 57600); //finds Arduino
-  arduino.pinMode(12, Arduino.INPUT); //BUTTON
+  arduino.pinMode(9, Arduino.INPUT); //BUTTON
   
-  arduino.pinMode(4, Arduino.OUTPUT); //LED, GrEEN
-  arduino.pinMode(8, Arduino.OUTPUT); //LED, RED
+  arduino.pinMode(12, Arduino.OUTPUT); //LED, GrEEN
+  arduino.pinMode(7, Arduino.OUTPUT); //LED, RED
   
   noStroke();
   rectMode(CENTER);
@@ -24,7 +24,7 @@ void draw(){
   background(255, 0, 0);
   
   //Button input
-  if(arduino.digitalRead(12) == Arduino.HIGH) {
+  if(arduino.digitalRead(9) == Arduino.HIGH) {
     fill(255);
   }
   else{
@@ -40,13 +40,13 @@ void draw(){
   
   //LED output
   if(mousePressed){
-    arduino.digitalWrite(4, Arduino.HIGH);
-    arduino.digitalWrite(8, Arduino.HIGH);
+    arduino.digitalWrite(12, Arduino.HIGH);
+    arduino.digitalWrite(7, Arduino.HIGH);
     fill(255);
   }
   else{
-    arduino.digitalWrite(4, Arduino.LOW);
-    arduino.digitalWrite(8, Arduino.LOW);
+    arduino.digitalWrite(12, Arduino.LOW);
+    arduino.digitalWrite(7, Arduino.LOW);
     fill(0);
   }
   rect(200,270,50,50);
