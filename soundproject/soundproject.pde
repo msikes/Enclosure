@@ -122,7 +122,7 @@ void draw() {
   pitch = map(analogFill, 0, 255, 0, 1);
   pitch2 = map(pitch, 0, 1, 1, 5);
   int pitchDisplay = round(pitch2);
-  println(pitchDisplay);
+  //println(pitchDisplay);
   fill(0);
   arduino.digitalWrite(7, Arduino.LOW);
   ///////////////////////////////////////////////////KICK
